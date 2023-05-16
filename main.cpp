@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <string.h>
 #define SIZE 10
 using namespace std;
 
@@ -75,15 +76,15 @@ cout<<ip<<" "<<*ip<<endl; 	// print
   
   pa = &a[0]; //pa =a;
   cout<<"Original: ";
-  for (i=0; i<SIZE-1; i++ ,pa++)
+  for (i=0; i<strlen(a)-1; i++ ,pa++)
     {
       cout<<setw(3)<<*pa;
     }
   cout<<setw(3)<<*pa<<endl;
 
-  pa = &a[0]; pb = &a[SIZE - 1];
+  pa = &a[0]; pb = &a[strlen(a) - 1];
   cout<<"Reverse: ";
-  for (i = 0; i < SIZE / 2; i++) 
+  for (i = 0; i < strlen(a) / 2; i++) 
   {
     temp = *pa;
     *pa = *pb;
@@ -91,7 +92,7 @@ cout<<ip<<" "<<*ip<<endl; 	// print
     pa++; pb--;
   }
   pa = &a[0];
-  for (i = 0; i < SIZE - 1; i++,pa++)
+  for (i = 0; i < strlen(a) - 1; i++,pa++)
     {
       cout<<setw(3)<<*pa;
     }
